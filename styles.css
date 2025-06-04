@@ -1,128 +1,357 @@
-/* ====== Global Reset & Base Styles ====== */
+/*--------------------------------------
+  1. Import Google Font: Roboto
+---------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+/*--------------------------------------
+  2. Global Reset & Base Styles
+---------------------------------------*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fafafa;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #004999;
+}
+
+/* Utility classes */
+.hidden { display: none; }
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/*--------------------------------------
+  3. Header & Navigation
+---------------------------------------*/
+header {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0066cc;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.nav-links li a:hover {
+  color: #004999;
+}
+
+/* Mobile nav toggle (optional for later) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin-bottom: 5px;
+  border-radius: 2px;
+}
+
+/*--------------------------------------
+  4. Hero Section
+---------------------------------------*/
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px); /* account for header */
+  background: url('hero-bg.jpg') center/cover no-repeat;
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#hero h1,
+#hero p,
+#hero .btn {
+  position: relative;
+  z-index: 1;
+}
+
+#hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  opacity: 0; transform: translateY(30px);
+  animation-delay: 0.2s;
+}
+
+#hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  opacity: 0; transform: translateY(30px);
+  animation-delay: 0.5s;
+}
+
+#hero .btn {
+  padding: 0.75rem 1.5rem;
+  background: #0066cc;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  opacity: 0; transform: translateY(30px);
+  animation-delay: 0.8s;
+}
+#hero .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/*--------------------------------------
+  5. About Section
+---------------------------------------*/
+#about {
+  padding: 6rem 0 4rem;
+  background: #ffffff;
+}
+#about h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-photo img {
+  width: 220px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  max-width: 600px;
+  font-size: 1rem;
+  color: #555;
+}
+.about-text p {
+  margin-bottom: 1rem;
+}
+
+/*--------------------------------------
+  6. Projects Section
+---------------------------------------*/
+#projects {
+  padding: 6rem 0 4rem;
+  background: #f5f5f5;
+}
+#projects h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.project-card img {
+  width: 100%;
+  height: auto;
+}
+.project-card h3 {
+  font-size: 1.25rem;
+  margin: 1rem;
+  font-weight: 600;
+}
+.project-card p {
+  flex-grow: 1;
+  margin: 0 1rem 1rem;
+  color: #555;
+}
+.project-card a {
+  display: inline-block;
+  margin: 0 1rem 1.5rem;
+  font-weight: 500;
+  color: #0066cc;
+}
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/*--------------------------------------
+  7. Contact Section
+---------------------------------------*/
+#contact {
+  padding: 6rem 0 4rem;
+  background: #ffffff;
+  text-align: center;
+}
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+#contact p {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+#contact .btn {
+  padding: 0.75rem 1.5rem;
+  background: #0066cc;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#contact .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/*--------------------------------------
+  8. Footer
+---------------------------------------*/
+footer {
+  background: #222222;
+  color: #ccc;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+footer p {
+  margin-bottom: 0.5rem;
+}
+footer a {
+  color: #ccc;
+}
+footer a:hover {
+  color: #fff;
+}
+
+/*--------------------------------------
+  9. Keyframe Animations
+---------------------------------------*/
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  a {
-    color: #0077cc;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  /* ====== Header & Navigation ====== */
-  header {
-    background: #f8f8f8;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  .nav-links {
-    list-style: none;
-    display: flex;
-  }
-  .nav-links li + li {
-    margin-left: 1.5rem;
-  }
-  
-  /* ====== Hero Section ====== */
-  #hero {
-    height: calc(100vh - 70px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #333 url('hero-bg.jpg') center/cover no-repeat;
-    color: #fff;
-    text-align: center;
-  }
-  #hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  #hero p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
-  .btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #0077cc;
-    color: #fff;
-    border-radius: 4px;
-  }
-  
-  /* ====== About Section ====== */
-  #about {
-    padding: 4rem 2rem;
-  }
+}
+
+/*--------------------------------------
+ 10. Responsive Breakpoints
+---------------------------------------*/
+
+/* Tablets (up to 768px) */
+@media (max-width: 768px) {
   .about-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
+    text-align: center;
   }
   .about-photo img {
-    width: 200px;
-    border-radius: 100%;
-    margin-right: 2rem;
-  }
-  .about-text {
-    max-width: 600px;
-  }
-  
-  /* ====== Projects Section ====== */
-  #projects {
-    padding: 4rem 2rem;
-    background: #f0f0f0;
+    margin-bottom: 1.5rem;
+    width: 180px;
   }
   .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
   }
-  .project-card {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-align: center;
+}
+
+/* Mobile (up to 480px) */
+@media (max-width: 480px) {
+  nav .nav-links {
+    display: none; /* You can add a mobile menu toggle later */
   }
-  .project-card img {
-    max-width: 100%;
-    border-radius: 4px;
-    margin-bottom: 1rem;
+  .nav-toggle {
+    display: flex;
   }
-  
-  /* ====== Contact & Footer ====== */
-  #contact {
-    padding: 4rem 2rem;
-    text-align: center;
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+  #hero p {
+    font-size: 1rem;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
   }
   footer {
-    background: #333;
-    color: #eee;
-    text-align: center;
-    padding: 2rem 0;
+    font-size: 0.8rem;
   }
-  footer a {
-    color: #eee;
-  }
-  footer a:hover {
-    color: #fff;
-  }
-  
+}
