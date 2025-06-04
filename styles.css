@@ -332,3 +332,31 @@ footer p {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+/*----------------------------------------
+  11. Typing‐Effect for Hero Title
+-----------------------------------------*/
+
+/* The container hides overflow so text “types” gradually */
+.typing-text {
+  display: inline-block;
+  overflow: hidden;              /* hide excess text */
+  white-space: nowrap;           /* keep on one line */
+  border-right: 2px solid #0066cc; /* blinking caret in accent color */
+  font-size: 3rem;               /* match your hero-title size */
+  font-weight: 700;              /* match your hero-title weight */
+  animation:
+    typing 2s steps(13) 0.5s forwards,  /* type over 2s, 13 characters, start at 0.5s */
+    blink-caret 0.75s step-end infinite;/* caret blink */
+}
+
+/* Adjust the width from 0→full over the duration */
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 13ch; } /* “13ch” equals 13 characters */
+}
+
+/* Blinking caret animation */
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50%      { border-color: #0066cc; }
+}
