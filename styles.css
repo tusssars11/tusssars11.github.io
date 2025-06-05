@@ -28,6 +28,7 @@ a {
   text-decoration: none;
   transition: color 0.2s ease;
 }
+
 a:hover {
   color: #d35400;
 }
@@ -59,7 +60,7 @@ header {
   align-items: center;
 }
 
-.logo {
+.logo a {
   font-size: 1.25rem;
   font-weight: 700;
   color: #2c3e50;
@@ -76,7 +77,9 @@ header {
   letter-spacing: 0.5px;
   color: #2c3e50;
 }
-.nav-links li a:hover {
+
+.nav-links li a:hover,
+.nav-links li a.active {
   color: #d35400;
 }
 
@@ -92,7 +95,7 @@ header {
   max-width: 600px;
   margin: 0 auto;
   background: #f0f2f5;
-  padding-top: 60px; /* offset for fixed header */
+  padding-top: 60px;     /* offset for fixed header */
   min-height: 100vh;
 }
 
@@ -104,10 +107,10 @@ header {
   width: 90%;
   max-width: 600px;
   margin: 0 auto;
-  padding-top: 80px;  /* space below fixed header */
+  padding-top: 80px;    /* space below fixed header */
   padding-bottom: 2rem;
   background: #ecf0f1;
-  overflow: visible;
+  overflow: visible;    /* ensure scaled boxes aren’t clipped */
 }
 
 /*--------------------------------------------------------------------------------
@@ -118,6 +121,7 @@ header {
   text-decoration: none;
   color: inherit;
 }
+
 .post-link:hover .post-card {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -192,6 +196,7 @@ header {
   color: #2c3e50;
   transition: color 0.2s ease;
 }
+
 .icon-btn:hover {
   color: #e67e22;
 }
@@ -201,6 +206,7 @@ header {
   font-size: 0.95rem;
   color: #2c3e50;
 }
+
 .post-caption strong {
   margin-right: 0.25rem;
 }
@@ -258,6 +264,7 @@ header {
   opacity: 0;
   animation: fadeInContent 1s ease-out forwards 0.5s;
 }
+
 @keyframes fadeInContent {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -318,38 +325,56 @@ header {
   margin-bottom: 2rem;
 }
 
+/* The two buttons (“Resume” + “LinkedIn”) side by side */
 .profile-buttons {
-  display: flex;
-  gap: 1rem;
+  display: inline-flex;     /* horizontally align children */
+  gap: 0.75rem;
   flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
+/* Primary “Open Resume” button adjustments */
 .btn-primary {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
   background: #e67e22;
   color: #ffffff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
   font-weight: 700;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 .btn-primary:hover {
   background: #d35400;
+  transform: translateY(-1px);
 }
 
+/* Outline “LinkedIn” button adjustments */
 .btn-outline {
-  background: transparent;
-  color: #e67e22;
-  padding: 0.6rem 1.2rem;
+  display: inline-flex;      /* allow icon + text to sit inline */
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
   border: 2px solid #e67e22;
   border-radius: 4px;
-  font-weight: 700;
-  transition: background 0.2s ease, color 0.2s ease;
+  color: #e67e22;
+  background: transparent;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 .btn-outline:hover {
   background: #e67e22;
   color: #ffffff;
+  transform: translateY(-1px);
 }
 
+/* Icon inside the LinkedIn button */
+.btn-outline .btn-icon {
+  width: 1rem;             /* roughly the same height as the text */
+  height: 1rem;
+  vertical-align: middle;
+}
+
+/* Profile stats bar */
 .profile-stats {
   display: flex;
   justify-content: space-around;
@@ -390,14 +415,17 @@ footer {
   font-size: 0.9rem;
   line-height: 1.5;
 }
+
 footer hr {
   border: none;
   border-top: 1px solid #ddd;
   margin: 2rem 0 1rem;
 }
+
 footer p {
   margin-bottom: 0.5rem;
 }
+
 .back-link {
   color: #e67e22;
   font-weight: 500;
@@ -407,7 +435,7 @@ footer p {
 }
 
 /*--------------------------------------------------------------------------------
-  12. TIMELINE & EXPERIENCE BOX STYLES (for experience.html only)
+ 12. TIMELINE & EXPERIENCE BOX STYLES (for experience.html)
 --------------------------------------------------------------------------------*/
 /* The vertical line appears only when .content-container also has .timeline-container */
 .timeline-container::before {
@@ -420,12 +448,7 @@ footer p {
   background: #e67e22; /* accent color for timeline */
 }
 
-/* Make sure parent allows overflow so the zoom isn’t clipped */
-.content-container {
-  overflow: visible;
-}
-
-/* Each experience “box” now uses --slide-offset for translation instead of animating transform directly */
+/* Each experience “box” slides in and is offset to the right of the line */
 .experience-box {
   position: relative;        /* so ::before (dot) can be absolutely placed */
   background: #ffffff;
@@ -434,18 +457,19 @@ footer p {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   padding: 1.5rem;
   margin: 2rem 0;            /* vertical space between boxes */
-  opacity: 0;                /* start invisible */
+  opacity: 0;                /* start invisible; animation makes it visible */
   animation-fill-mode: forwards;
   width: calc(100% - 60px);  /* leave room on left for line + dot (60px total) */
   margin-left: 60px;         /* shift the box to the right of the timeline */
-  overflow: visible;  /* ← CHANGE HERE #1 */
 
-  /* 1) initialize the slide‐in offset variable */
+  /* Initialize slide offset var */
   --slide-offset: 0px;
 
-  /* 2) compose both the translateX slide‐offset and a default scale(1) */
+  /* Compose translateX(var(--slide-offset)) and scale(1) */
   transform: translateX(var(--slide-offset)) scale(1);
-  transform-origin: center center;      /* grow equally in all directions */
+  transform-origin: center center;
+
+  /* transition for smooth hover zoom */
   transition: transform 0.4s ease, box-shadow 0.4s ease, z-index 0s;
 }
 
@@ -460,8 +484,6 @@ footer p {
   left: -34px;               /* centers dot above the 4px timeline */
   top: 1.5rem;               /* aligns roughly with the box’s title */
   box-shadow: 0 0 0 4px #ecf0f1; /* white ring around the dot */
-  
-
 }
 
 /* Meta text inside each box (dates, etc.) */
@@ -472,7 +494,7 @@ footer p {
 }
 
 /*--------------------------------------------------------------------------------
-  13. SLIDE-IN KEYFRAMES (now animating --slide-offset instead of transform)
+  13. SLIDE‐IN ANIMATIONS (now animating --slide-offset)
 --------------------------------------------------------------------------------*/
 @keyframes slideInFromLeft {
   0% {
@@ -506,23 +528,25 @@ footer p {
 }
 
 /*--------------------------------------------------------------------------------
-  14. HOVER “ZOOM ×2” EFFECT (compose scale(2) with whatever the current --slide-offset is)
+  14. HOVER “ZOOM” EFFECT
 --------------------------------------------------------------------------------*/
 .experience-box:hover {
-  transform: translateX(var(--slide-offset)) scale(2);
+  /* Compose current translateX(var(--slide-offset)) with a scale(1.1) */
+  transform: translateX(var(--slide-offset)) scale(1.5);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  z-index: 10; /* bring to front */
 }
 
 /*--------------------------------------------------------------------------------
   15. RESPONSIVE BREAKPOINTS
- (unchanged from before, but you may already have these below)
 --------------------------------------------------------------------------------*/
 @media (max-width: 768px) {
+  /* Hide nav links if implementing a mobile menu (optional) */
   .nav-links {
     display: none;
   }
 
+  /* Smaller post avatar */
   .post-avatar {
     width: 36px;
     height: 36px;
@@ -549,6 +573,7 @@ footer p {
     font-size: 0.95rem;
   }
 
+  /* Narrower timeline and dot on Experience page */
   .timeline-container::before {
     left: 15px;
     top: 40px;
@@ -568,6 +593,7 @@ footer p {
     box-shadow: 0 0 0 3px #ecf0f1;
   }
 
+  /* Profile page adjustments */
   .profile-header {
     flex-direction: column;
     align-items: center;
@@ -591,6 +617,7 @@ footer p {
     font-size: 0.85rem;
   }
 
+  /* Experience box padding adjustments */
   .experience-box {
     margin: 1.5rem 0;
     padding: 1.25rem;
@@ -598,16 +625,19 @@ footer p {
 }
 
 @media (max-width: 480px) {
-  .experience-box {
-    width: 100%;
-    margin-left: 0;
-    padding: 1rem;
-  }
+  /* Very small screens: hide timeline and dots */
   .timeline-container::before,
   .experience-box::before {
     display: none;
   }
+  .experience-box {
+    width: 100%;
+    margin-left: 0;
+    padding: 1rem;
+    /* no zoom on very small screens */
+  }
 
+  /* Further tweak post elements */
   .post-avatar {
     width: 32px;
     height: 32px;
@@ -632,6 +662,7 @@ footer p {
     font-size: 0.9rem;
   }
 
+  /* Profile page headshot smaller */
   .about-photo img {
     width: 120px;
     height: 120px;

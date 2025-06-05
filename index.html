@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tushar Koushik • Portfolio Feed</title>
+  <title>Feed • Tushar Koushik</title>
 
   <!-- Monospaced font (Fira Code) -->
   <link
@@ -11,7 +11,7 @@
     rel="stylesheet"
   />
 
-  <!-- Link to your updated styles.css -->
+  <!-- Link to your styles.css -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,9 +21,10 @@
   <header>
     <nav>
       <div class="nav-container">
-        <div class="logo">Tushar’s Feed</div>
+        <!-- Clicking the logo also takes you to Feed -->
+        <div class="logo"><a href="index.html">Tushar Koushik</a></div>
         <ul class="nav-links">
-          <li><a href="index.html">Feed</a></li>
+          <li><a href="index.html" class="active">Feed</a></li>
           <li><a href="profile.html">Profile</a></li>
           <li><a href="experience.html">Experience</a></li>
           <li><a href="education.html">Education</a></li>
@@ -37,7 +38,7 @@
        FEED CONTAINER
        ========================= -->
   <div class="feed-container">
-    <!-- Example Post 1 -->
+    <!-- Example Post 1 (clicking the card goes to post1.html) -->
     <a href="post1.html" class="post-link">
       <div class="post-card">
         <div class="post-header">
@@ -48,7 +49,11 @@
           </div>
         </div>
         <div class="post-image">
-          <img src="project1-screenshot.png" alt="Project screenshot" style="width: 100%;" />
+          <img
+            src="project1-screenshot.png"
+            alt="Project screenshot"
+            style="width: 100%;"
+          />
         </div>
         <div class="post-actions">
           <button class="icon-btn">❤️</button>
@@ -109,7 +114,7 @@
       </div>
     </a>
 
-    <!-- Example Post 4 -->
+    <!-- Example Post 4 (text‐only) -->
     <a href="post4.html" class="post-link">
       <div class="post-card">
         <div class="post-header">
@@ -168,7 +173,7 @@
           </div>
         </div>
         <div class="post-text">
-          Volunteered at local hackathon as a mentor today—awesome experience! 🤝💡
+          Volunteered at a local hackathon as a mentor today—awesome experience! 🤝💡
         </div>
         <div class="post-actions">
           <button class="icon-btn">❤️</button>
@@ -207,7 +212,7 @@
         // Load only 2 additional posts, then disconnect
         for (let i = 0; i < 2; i++) {
           const newLink = document.createElement('a');
-          newLink.href = "#";            // or point to post7.html if you have it
+          newLink.href = "#";            // or point to another post X.detail.html
           newLink.className = "post-link";
           newLink.innerHTML = `
             <div class="post-card">
