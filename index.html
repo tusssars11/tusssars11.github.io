@@ -3,88 +3,239 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tushar Koushik • Portfolio</title>
+  <title>Tushar Koushik • Portfolio Feed</title>
 
-  <!-- 1) Import your coding font (e.g. Fira Code) -->
+  <!-- Monospaced font (Fira Code) -->
   <link
     href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
 
-  <!-- 2) Link to your CSS -->
+  <!-- Link to your updated styles.css -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ====== NAVBAR ====== -->
+  <!-- =========================
+       FIXED NAVBAR
+       ========================= -->
   <header>
-    <nav class="container">
-      <div class="logo">Tushar Koushik</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-      </ul>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">Tushar’s Feed</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Feed</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="extracurricular.html">Extracurricular</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
-  <!-- ====== HERO SECTION ====== -->
-  <section id="home" class="hero">
-    <!-- Soccer→Chart animation container (if still present) -->
-    <div class="soccer-to-chart">
-      <img src="soccer-ball.png" alt="Soccer Ball" class="soccer-ball" />
-      <div class="bars">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
+  <!-- =========================
+       FEED CONTAINER
+       ========================= -->
+  <div class="feed-container">
+    <!-- Example Post 1 -->
+    <a href="post1.html" class="post-link">
+      <div class="post-card">
+        <div class="post-header">
+          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
+          <div class="post-userinfo">
+            <span class="post-username">tusharkoushik</span>
+            <span class="post-timestamp">1h</span>
+          </div>
+        </div>
+        <div class="post-image">
+          <img src="project1-screenshot.png" alt="Project screenshot" style="width: 100%;" />
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn">❤️</button>
+          <button class="icon-btn">💬</button>
+          <button class="icon-btn">🔗</button>
+        </div>
+        <div class="post-caption">
+          <p><strong>tusharkoushik</strong> Just launched my new data viz project! 🚀</p>
+        </div>
       </div>
-    </div>
-  
-    <!-- Updated typing effect on your name -->
-    <h1 class="hero-title">
-      <span class="typing-text">Tushar Koushik </span>
-    </h1>
-    <h2 class="hero-subtitle">Computer Scientist</h2>
-    <p class="hero-note">What are you doing down here? Check out the other pages!</p>
-  </section>
-    
+    </a>
 
-  <!-- ====== ABOUT SECTION ====== -->
-  <section id="about" class="container content-section">
-    <h2 class="section-heading">About Me</h2>
-    <div class="about-container">
-      <div class="about-photo">
-        <img src="headshot.jpg" alt="Photo of Tushar" />
+    <!-- Example Post 2 (text‐only) -->
+    <a href="post2.html" class="post-link">
+      <div class="post-card">
+        <div class="post-header">
+          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
+          <div class="post-userinfo">
+            <span class="post-username">tusharkoushik</span>
+            <span class="post-timestamp">2h</span>
+          </div>
+        </div>
+        <div class="post-text">
+          Excited to share that I contributed to an open source ML library today! 🐍✨
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn">❤️</button>
+          <button class="icon-btn">💬</button>
+          <button class="icon-btn">🔗</button>
+        </div>
+        <div class="post-caption">
+          <p><strong>tusharkoushik</strong> #100DaysOfCode day 45: PR merged! 📈</p>
+        </div>
       </div>
-      <div class="about-text">
-        <p>
-          I’m a rising Junior studying Computer Science & Data Science at Wheaton College. I
-          enjoy building neat data visualizations, experimenting with machine learning models,
-          and contributing to open source.
-        </p>
-      </div>
-    </div>
-  </section>
+    </a>
 
-  <!-- ====== PROJECTS SECTION ====== -->
-  <section id="projects" class="container content-section">
-    <h2 class="section-heading">Projects</h2>
-    <div class="project-list">
-      <div class="project-card">
-        <img src="project1-screenshot.png" alt="Project 1 Screenshot" />
-        <h3>Project 1 Title</h3>
-        <p>One‐line description of what it does and the tech used.</p>
-        <a href="https://github.com/tusssars11/project1" target="_blank" rel="noopener noreferrer">
-          View on GitHub
-        </a>
+    <!-- Example Post 3 -->
+    <a href="post3.html" class="post-link">
+      <div class="post-card">
+        <div class="post-header">
+          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
+          <div class="post-userinfo">
+            <span class="post-username">tusharkoushik</span>
+            <span class="post-timestamp">3h</span>
+          </div>
+        </div>
+        <div class="post-image">
+          <img src="project2-screenshot.png" alt="Project 2 screenshot" style="width: 100%;" />
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn">❤️</button>
+          <button class="icon-btn">💬</button>
+          <button class="icon-btn">🔗</button>
+        </div>
+        <div class="post-caption">
+          <p><strong>tusharkoushik</strong> Deployed a Flask API to production today! 🔥</p>
+        </div>
       </div>
-      <!-- Repeat .project-card for each project -->
-    </div>
-  </section>
+    </a>
 
-  <!-- ====== FOOTER ====== -->
-  <footer>
-    <p>© 2025 Tushar Koushik. All rights reserved.</p>
-    <p>Powered by GitHub Pages</p>
-  </footer>
+    <!-- Example Post 4 -->
+    <a href="post4.html" class="post-link">
+      <div class="post-card">
+        <div class="post-header">
+          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
+          <div class="post-userinfo">
+            <span class="post-username">tusharkoushik</span>
+            <span class="post-timestamp">4h</span>
+          </div>
+        </div>
+        <div class="post-text">
+          Just finished designing a responsive React component library! 🎨🛠️
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn">❤️</button>
+          <button class="icon-btn">💬</button>
+          <button class="icon-btn">🔗</button>
+        </div>
+        <div class="post-caption">
+          <p><strong>tusharkoushik</strong> Check out the repo linked in my bio.</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Example Post 5 -->
+    <a href="post5.html" class="post-link">
+      <div class="post-card">
+        <div class="post-header">
+          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
+          <div class="post-userinfo">
+            <span class="post-username">tusharkoushik</span>
+            <span class="post-timestamp">6h</span>
+          </div>
+        </div>
+        <div class="post-image">
+          <img src="project3-screenshot.png" alt="Project 3 screenshot" style="width: 100%;" />
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn">❤️</button>
+          <button class="icon-btn">💬</button>
+          <button class="icon-btn">🔗</button>
+        </div>
+        <div class="post-caption">
+          <p><strong>tusharkoushik</strong> Built a D3 map visualization for geospatial data 🌍📊</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Example Post 6 -->
+    <a href="post6.html" class="post-link">
+      <div class="post-card">
+        <div class="post-header">
+          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
+          <div class="post-userinfo">
+            <span class="post-username">tusharkoushik</span>
+            <span class="post-timestamp">8h</span>
+          </div>
+        </div>
+        <div class="post-text">
+          Volunteered at local hackathon as a mentor today—awesome experience! 🤝💡
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn">❤️</button>
+          <button class="icon-btn">💬</button>
+          <button class="icon-btn">🔗</button>
+        </div>
+        <div class="post-caption">
+          <p><strong>tusharkoushik</strong> Loved helping new devs build their first app.</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Sentinel for infinite scroll (optional) -->
+    <div id="load-more"></div>
+  </div>
+
+  <!-- =========================
+       INFINITE SCROLL JAVASCRIPT (optional)
+       ========================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const feedContainer = document.querySelector('.feed-container');
+      const sentinel = document.getElementById('load-more');
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            loadMorePosts();
+          }
+        });
+      }, { rootMargin: '100px' });
+
+      observer.observe(sentinel);
+
+      function loadMorePosts() {
+        // Load only 2 additional posts, then disconnect
+        for (let i = 0; i < 2; i++) {
+          const newLink = document.createElement('a');
+          newLink.href = "#";            // or point to post7.html if you have it
+          newLink.className = "post-link";
+          newLink.innerHTML = `
+            <div class="post-card">
+              <div class="post-header">
+                <img src="headshot.jpg" class="post-avatar" alt="Avatar" />
+                <div class="post-userinfo">
+                  <span class="post-username">more_posts</span>
+                  <span class="post-timestamp">just now</span>
+                </div>
+              </div>
+              <div class="post-text">
+                This is a dynamically loaded post #${Math.floor(Math.random() * 1000)}
+              </div>
+              <div class="post-actions">
+                <button class="icon-btn">❤️</button>
+                <button class="icon-btn">💬</button>
+                <button class="icon-btn">🔗</button>
+              </div>
+              <div class="post-caption">
+                <p><strong>more_posts</strong> Auto-generated content</p>
+              </div>
+            </div>
+          `;
+          feedContainer.insertBefore(newLink, sentinel);
+        }
+        observer.disconnect(); // stop loading after two extras
+      }
+    });
+  </script>
 </body>
 </html>
