@@ -448,28 +448,22 @@ footer p {
   background: #e67e22; /* accent color for timeline */
 }
 
-/* Each experience “box” slides in and is offset to the right of the line */
+/* Each experience “box” no longer slides in from sides—they simply zoom on hover */
 .experience-box {
-  position: relative;        /* so ::before (dot) can be absolutely placed */
+  position: relative;        /* so ::before (dot) can be placed */
   background: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   padding: 1.5rem;
   margin: 2rem 0;            /* vertical space between boxes */
-  opacity: 0;                /* start invisible; animation makes it visible */
-  animation-fill-mode: forwards;
+  opacity: 1;                /* always visible—no initial slide animation */
   width: calc(100% - 60px);  /* leave room on left for line + dot (60px total) */
   margin-left: 60px;         /* shift the box to the right of the timeline */
 
-  /* Initialize slide offset var */
-  --slide-offset: 0px;
-
-  /* Compose translateX(var(--slide-offset)) and scale(1) */
-  transform: translateX(var(--slide-offset)) scale(1);
+  /* If you want them invisible until hovered, you can revert opacity—but here we keep them visible */
+  transform: scale(1);
   transform-origin: center center;
-
-  /* transition for smooth hover zoom */
   transition: transform 0.4s ease, box-shadow 0.4s ease, z-index 0s;
 }
 
@@ -494,51 +488,20 @@ footer p {
 }
 
 /*--------------------------------------------------------------------------------
-  13. SLIDE‐IN ANIMATIONS (now animating --slide-offset)
+ 13. (No slide‐in rules here for experience—only zoom on hover)
 --------------------------------------------------------------------------------*/
-@keyframes slideInFromLeft {
-  0% {
-    --slide-offset: -30px;
-    opacity: 0;
-  }
-  100% {
-    --slide-offset: 0px;
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    --slide-offset: 30px;
-    opacity: 0;
-  }
-  100% {
-    --slide-offset: 0px;
-    opacity: 1;
-  }
-}
-
-/* Apply the keyframes to each box (odd/even alternation) */
-.slide-in-left {
-  animation: slideInFromLeft 0.6s forwards;
-}
-
-.slide-in-right {
-  animation: slideInFromRight 0.6s forwards;
-}
 
 /*--------------------------------------------------------------------------------
-  14. HOVER “ZOOM” EFFECT
+ 14. HOVER “ZOOM” EFFECT (for experience-page boxes)
 --------------------------------------------------------------------------------*/
 .experience-box:hover {
-  /* Compose current translateX(var(--slide-offset)) with a scale(1.1) */
-  transform: translateX(var(--slide-offset)) scale(1.5);
+  transform: scale(1.5);            /* 1.5× size on hover */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  z-index: 10; /* bring to front */
+  z-index: 10;                      /* bring to front */
 }
 
 /*--------------------------------------------------------------------------------
-  15. RESPONSIVE BREAKPOINTS
+ 15. RESPONSIVE BREAKPOINTS
 --------------------------------------------------------------------------------*/
 @media (max-width: 768px) {
   /* Hide nav links if implementing a mobile menu (optional) */
@@ -675,4 +638,182 @@ footer p {
   .section-heading {
     font-size: 1.75rem;
   }
+}
+
+/* --------------------------------------------------------------------------------
+   SLIDE‐IN & FADE‐IN ANIMATIONS FOR Extracurricular Page
+----------------------------------------------------------------------------------*/
+
+/* 1) Fade‐in for the heading and footer */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out var(--delay, 0s) forwards;
+}
+
+/* 2) Slide‐in keyframes */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 3) Classes triggering those animations, using --delay */
+.slide-in-left {
+  opacity: 0;
+  animation: slideInFromLeft 0.6s ease-out var(--delay) forwards;
+}
+
+.slide-in-right {
+  opacity: 0;
+  animation: slideInFromRight 0.6s ease-out var(--delay) forwards;
+}
+
+/* 4) Basic card styling (ensure larger boxes) */
+.content-section {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 5) Hover “lift” effect */
+.content-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 6) extra-detail text styling (easy readability) */
+.extra-detail h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+.extra-detail p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555555;
+  margin-top: 0.5rem;
+}
+
+/* 7) Responsive adjustments */
+@media (max-width: 768px) {
+  .content-section {
+    padding: 1.25rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .extra-detail h3 {
+    font-size: 1.1rem;
+  }
+  .extra-detail p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-section {
+    padding: 1rem 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .extra-detail h3 {
+    font-size: 1rem;
+  }
+  .extra-detail p {
+    font-size: 0.9rem;
+  }
+}
+
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1rem auto 2rem;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.certificate-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.certificate-item img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 120px;
+  transition: transform 0.3s ease;
+}
+
+.certificate-item:hover img {
+  transform: scale(1.05);
+}
+
+.cert-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.cert-modal-content {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.cert-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cert-modal-content:hover {
+  transform: scale(1.02);
 }

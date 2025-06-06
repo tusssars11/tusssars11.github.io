@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Website Launch • Tushar Koushik</title>
+
+  <!-- Monospaced font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Link your shared CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- =========================
+       FIXED NAVBAR
+       ========================= -->
+  <header>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">Tushar Koushik</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Feed</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="extracurricular.html">Extracurricular</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================
+       POST DETAIL CONTENT
+       ========================= -->
+  <section class="content-container fade-page">
+    <h2 class="section-heading">Portfolio Website Launch</h2>
+
+    <!-- LARGE SCREENSHOT -->
+    <div style="margin-top: 1rem;">
+      <img
+        src="screenshots/portfolio-preview.png"
+        alt="Full‐size screenshot of portfolio website"
+        style="width: 100%; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);"
+      />
+    </div>
+
+    <!-- DETAILED DESCRIPTION -->
+    <div style="margin-top: 1.5rem; font-size: 1rem; color: #555;">
+      <p>
+        After weeks of planning and design, I built my new portfolio site completely from scratch
+        using plain HTML, CSS, and vanilla JavaScript—no frameworks. The goal was to keep it lightweight,
+        fully responsive, and showcase both my code samples and my interactive projects (like the D3 dashboard).
+      </p>
+
+      <h3>Key Highlights:</h3>
+      <ul style="margin-left: 1.25rem; color: #555;">
+        <li>
+          <strong>Responsive Design:</strong> Adaptable layout that works on mobile, tablet, and desktop
+          using CSS Flexbox and media queries.
+        </li>
+        <li>
+          <strong>Animated Hero Section:</strong> Simple CSS‐only animations on page load to draw attention
+          to my headshot and tagline.
+        </li>
+        <li>
+          <strong>Project Showcase:</strong> A grid section displaying recent projects with hover‐zoom effects
+          (using pure CSS transforms).
+        </li>
+        <li>
+          <strong>Dark/Light Mode Toggle:</strong> Built a JavaScript toggle that remembers your preference
+          (using <code>localStorage</code>).
+        </li>
+      </ul>
+
+      <h3>Tech Stack & Deployment</h3>
+      <p>
+        • HTML5, CSS3, JavaScript (ES6)<br />
+        • No build step—everything is static HTML/CSS/JS<br />
+        • Hosted on GitHub Pages at
+        <a
+          href="https://tusssars11.github.io"
+          target="_blank"
+          style="color: #e67e22;"
+        >
+          tusssars11.github.io
+        </a>
+      </p>
+
+      <h3>View the Source</h3>
+      <p>
+        All code is open‐source on GitHub:
+        <a
+          href="https://github.com/tusssars11/tusssars11.github.io"
+          target="_blank"
+          style="color: #e67e22;"
+        >
+          github.com/tusssars11/tusssars11.github.io
+        </a>
+      </p>
+    </div>
+
+    <!-- BACK LINK & FOOTER -->
+    <footer style="margin-top: 2rem;">
+      <hr />
+      <p>
+        <a href="index.html" class="back-link">← Back to Feed</a>
+      </p>
+      <p>© 2025 Tushar Koushik. All rights reserved.</p>
+    </footer>
+  </section>
+</body>
+</html>

@@ -11,7 +11,7 @@
     rel="stylesheet"
   />
 
-  <!-- Link to your styles.css -->
+  <!-- Link to your shared CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,7 +21,6 @@
   <header>
     <nav>
       <div class="nav-container">
-        <!-- Clicking the logo also takes you to Feed -->
         <div class="logo"><a href="index.html">Tushar Koushik</a></div>
         <ul class="nav-links">
           <li><a href="index.html" class="active">Feed</a></li>
@@ -38,20 +37,20 @@
        FEED CONTAINER
        ========================= -->
   <div class="feed-container">
-    <!-- Example Post 1 (clicking the card goes to post1.html) -->
-    <a href="post1.html" class="post-link">
+    <!-- Post 1: Portfolio Website Launch -->
+    <a href="post-portfolio.html" class="post-link">
       <div class="post-card">
         <div class="post-header">
           <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
           <div class="post-userinfo">
             <span class="post-username">tusharkoushik</span>
-            <span class="post-timestamp">1h</span>
+            <span class="post-timestamp">Jun 2025</span>
           </div>
         </div>
         <div class="post-image">
           <img
-            src="project1-screenshot.png"
-            alt="Project screenshot"
+            src="screenshots/portfolio-preview.png"
+            alt="Screenshot of new portfolio website"
             style="width: 100%;"
           />
         </div>
@@ -61,47 +60,38 @@
           <button class="icon-btn">🔗</button>
         </div>
         <div class="post-caption">
-          <p><strong>tusharkoushik</strong> Just launched my new data viz project! 🚀</p>
+          <p>
+            <strong>tusharkoushik</strong>
+            • Just launched my brand‐new portfolio website from scratch (HTML/CSS/JS)!
+            <br />
+            <a
+              href="https://github.com/tusssars11/tusssars11.github.io"
+              target="_blank"
+              style="color: #e67e22;"
+            >
+              View the source on GitHub
+            </a>
+          </p>
         </div>
       </div>
     </a>
 
-    <!-- Example Post 2 (text‐only) -->
-    <a href="post2.html" class="post-link">
+    <!-- Post 2: Working on Lexomics API -->
+    <a href="#" class="post-link">
       <div class="post-card">
         <div class="post-header">
           <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
           <div class="post-userinfo">
             <span class="post-username">tusharkoushik</span>
-            <span class="post-timestamp">2h</span>
-          </div>
-        </div>
-        <div class="post-text">
-          Excited to share that I contributed to an open source ML library today! 🐍✨
-        </div>
-        <div class="post-actions">
-          <button class="icon-btn">❤️</button>
-          <button class="icon-btn">💬</button>
-          <button class="icon-btn">🔗</button>
-        </div>
-        <div class="post-caption">
-          <p><strong>tusharkoushik</strong> #100DaysOfCode day 45: PR merged! 📈</p>
-        </div>
-      </div>
-    </a>
-
-    <!-- Example Post 3 -->
-    <a href="post3.html" class="post-link">
-      <div class="post-card">
-        <div class="post-header">
-          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
-          <div class="post-userinfo">
-            <span class="post-username">tusharkoushik</span>
-            <span class="post-timestamp">3h</span>
+            <span class="post-timestamp">May 2025</span>
           </div>
         </div>
         <div class="post-image">
-          <img src="project2-screenshot.png" alt="Project 2 screenshot" style="width: 100%;" />
+          <img
+            src="screenshots/lexomics-preview.png"
+            alt="Lexomics API development"
+            style="width: 100%;"
+          />
         </div>
         <div class="post-actions">
           <button class="icon-btn">❤️</button>
@@ -109,23 +99,36 @@
           <button class="icon-btn">🔗</button>
         </div>
         <div class="post-caption">
-          <p><strong>tusharkoushik</strong> Deployed a Flask API to production today! 🔥</p>
+          <p>
+            <strong>tusharkoushik</strong>
+            • Currently contributing to the Lexomics API project—building new endpoints and improving
+            data processing.  
+            <br />
+            <a
+              href="https://github.com/scottkleinman/uv_lexos"
+              target="_blank"
+              style="color: #e67e22;"
+            >
+              Explore the repository
+            </a>
+          </p>
         </div>
       </div>
     </a>
 
-    <!-- Example Post 4 (text‐only) -->
-    <a href="post4.html" class="post-link">
+    <!-- Post 3: Graduated from Break Through Tech AI @ MIT -->
+    <a href="#" class="post-link">
       <div class="post-card">
         <div class="post-header">
           <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
           <div class="post-userinfo">
             <span class="post-username">tusharkoushik</span>
-            <span class="post-timestamp">4h</span>
+            <span class="post-timestamp">Apr 2025</span>
           </div>
         </div>
         <div class="post-text">
-          Just finished designing a responsive React component library! 🎨🛠️
+          Thrilled to have graduated from the Break Through Tech AI program at MIT! Learned advanced
+          machine learning techniques and networked with industry leaders. 🎓🤖
         </div>
         <div class="post-actions">
           <button class="icon-btn">❤️</button>
@@ -133,23 +136,29 @@
           <button class="icon-btn">🔗</button>
         </div>
         <div class="post-caption">
-          <p><strong>tusharkoushik</strong> Check out the repo linked in my bio.</p>
+          <p>
+            <strong>tusharkoushik</strong> • Break Through Tech AI @ MIT – Class of Spring 2025
+          </p>
         </div>
       </div>
     </a>
 
-    <!-- Example Post 5 -->
-    <a href="post5.html" class="post-link">
+    <!-- Post 4: Oyster Classification Project (Massachusetts Data) -->
+    <a href="#" class="post-link">
       <div class="post-card">
         <div class="post-header">
           <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
           <div class="post-userinfo">
             <span class="post-username">tusharkoushik</span>
-            <span class="post-timestamp">6h</span>
+            <span class="post-timestamp">Mar 2025</span>
           </div>
         </div>
         <div class="post-image">
-          <img src="project3-screenshot.png" alt="Project 3 screenshot" style="width: 100%;" />
+          <img
+            src="screenshots/oyster-project-preview.png"
+            alt="Oyster classification project"
+            style="width: 100%;"
+          />
         </div>
         <div class="post-actions">
           <button class="icon-btn">❤️</button>
@@ -157,23 +166,28 @@
           <button class="icon-btn">🔗</button>
         </div>
         <div class="post-caption">
-          <p><strong>tusharkoushik</strong> Built a D3 map visualization for geospatial data 🌍📊</p>
+          <p>
+            <strong>tusharkoushik</strong>
+            • Built a classifier to separate good oysters from bad using Massachusetts oyster data.
+            Achieved over 80% accuracy with a combination of feature engineering and gradient boosting.
+          </p>
         </div>
       </div>
     </a>
 
-    <!-- Example Post 6 -->
-    <a href="post6.html" class="post-link">
+    <!-- Post 5: Skin Disease Kaggle Competition (AJL) -->
+    <a href="#" class="post-link">
       <div class="post-card">
         <div class="post-header">
           <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
           <div class="post-userinfo">
             <span class="post-username">tusharkoushik</span>
-            <span class="post-timestamp">8h</span>
+            <span class="post-timestamp">Feb 2025</span>
           </div>
         </div>
         <div class="post-text">
-          Volunteered at a local hackathon as a mentor today—awesome experience! 🤝💡
+          Led the team in fine‐tuning a model that achieved over 80% accuracy on a skin disease dataset
+          for the Algorithmic Justice League’s Kaggle competition. Proud of our collaborative effort! 🏆
         </div>
         <div class="post-actions">
           <button class="icon-btn">❤️</button>
@@ -181,12 +195,199 @@
           <button class="icon-btn">🔗</button>
         </div>
         <div class="post-caption">
-          <p><strong>tusharkoushik</strong> Loved helping new devs build their first app.</p>
+          <p>
+            <strong>tusharkoushik</strong> • AJL Kaggle Challenge – Skin Disease Classification
+          </p>
         </div>
       </div>
     </a>
 
-    <!-- Sentinel for infinite scroll (optional) -->
+    <!-- Post 6: MIT Policy Hackathon (Data Visualization) -->
+    <a href="#" class="post-link">
+      <div class="post-card">
+        <div class="post-header">
+          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
+          <div class="post-userinfo">
+            <span class="post-username">tusharkoushik</span>
+            <span class="post-timestamp">Jan 2025</span>
+          </div>
+        </div>
+        <div class="post-image">
+          <img
+            src="screenshots/policy-hackathon-preview.png"
+            alt="MIT Policy Hackathon"
+            style="width: 100%;"
+          />
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn">❤️</button>
+          <button class="icon-btn">💬</button>
+          <button class="icon-btn">🔗</button>
+        </div>
+        <div class="post-caption">
+          <p>
+            <strong>tusharkoushik</strong>
+            • Contributed as Data Visualist at the MIT Policy Hackathon—helped present complex policy
+            data in interactive dashboards.
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 7: Predicting Soccer Players Off‐Camera (LSTM) -->
+    <a href="#" class="post-link">
+      <div class="post-card">
+        <div class="post-header">
+          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
+          <div class="post-userinfo">
+            <span class="post-username">tusharkoushik</span>
+            <span class="post-timestamp">Nov 2024</span>
+          </div>
+        </div>
+        <div class="post-image">
+          <img
+            src="screenshots/soccer-lstm-preview.png"
+            alt="Soccer off-camera prediction model"
+            style="width: 100%;"
+          />
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn">❤️</button>
+          <button class="icon-btn">💬</button>
+          <button class="icon-btn">🔗</button>
+        </div>
+        <div class="post-caption">
+          <p>
+            <strong>tusharkoushik</strong>
+            • Completed an LSTM model to predict soccer players who move off‐camera based on game feed data.
+            Deployed prototype in Python with real‐time inference.
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 8: Featured on Wheaton College “Embracing AI” -->
+    <a href="#" class="post-link">
+      <div class="post-card">
+        <div class="post-header">
+          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
+          <div class="post-userinfo">
+            <span class="post-username">tusharkoushik</span>
+            <span class="post-timestamp">Oct 2024</span>
+          </div>
+        </div>
+        <div class="post-image">
+          <img
+            src="screenshots/embracing-ai-preview.png"
+            alt="Wheaton College Embracing AI feature"
+            style="width: 100%;"
+          />
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn">❤️</button>
+          <button class="icon-btn">💬</button>
+          <button class="icon-btn">🔗</button>
+        </div>
+        <div class="post-caption">
+          <p>
+            <strong>tusharkoushik</strong>
+            • Featured on Wheaton College website for demonstrating proficiency and enthusiasm for
+            “Embracing Artificial Intelligence.”
+            <br />
+            <a
+              href="https://wheatoncollege.edu/news/embracing-artificial-intelligence/"
+              target="_blank"
+              style="color: #e67e22;"
+            >
+              Read the article
+            </a>
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 9: TA for “AI for Good” (Summer 2024) -->
+    <a href="#" class="post-link">
+      <div class="post-card">
+        <div class="post-header">
+          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
+          <div class="post-userinfo">
+            <span class="post-username">tusharkoushik</span>
+            <span class="post-timestamp">Aug 2024</span>
+          </div>
+        </div>
+        <div class="post-text">
+          Served as a Teaching Assistant for Pre‐College “AI for Good” class (Summer 2024). Led lectures on
+          basic ML and data science—great experience mentoring high school students! 🎓🤖
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn">❤️</button>
+          <button class="icon-btn">💬</button>
+          <button class="icon-btn">🔗</button>
+        </div>
+        <div class="post-caption">
+          <p>
+            <strong>tusharkoushik</strong> • Wheaton College “AI for Good” TA – Summer 2024
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 10: Research Paper on Hepatitis B (SEIR Model in R) -->
+    <a href="#" class="post-link">
+      <div class="post-card">
+        <div class="post-header">
+          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
+          <div class="post-userinfo">
+            <span class="post-username">tusharkoushik</span>
+            <span class="post-timestamp">May 2024</span>
+          </div>
+        </div>
+        <div class="post-text">
+          Published a research paper modeling Hepatitis B trends using an SEIR model in R. Explored transmission
+          dynamics and forecasted outbreak scenarios—collaborated with my faculty advisor. 📑🧪
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn">❤️</button>
+          <button class="icon-btn">💬</button>
+          <button class="icon-btn">🔗</button>
+        </div>
+        <div class="post-caption">
+          <p>
+            <strong>tusharkoushik</strong> • Hepatitis B SEIR Model (R) – Spring 2024 Research
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 11: Volunteer Chemistry Tutor (Spring 2023) -->
+    <a href="#" class="post-link">
+      <div class="post-card">
+        <div class="post-header">
+          <img src="headshot.jpg" alt="Tushar’s avatar" class="post-avatar" />
+          <div class="post-userinfo">
+            <span class="post-username">tusharkoushik</span>
+            <span class="post-timestamp">May 2023</span>
+          </div>
+        </div>
+        <div class="post-text">
+          Volunteered as a chemistry tutor throughout Spring 2023 semester—helped undergrads improve their
+          understanding of organic and physical chemistry. 🧪📚
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn">❤️</button>
+          <button class="icon-btn">💬</button>
+          <button class="icon-btn">🔗</button>
+        </div>
+        <div class="post-caption">
+          <p>
+            <strong>tusharkoushik</strong> • Spring 2023 Chemistry Tutoring Volunteer
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <!-- (Optional) sentinel for infinite scroll -->
     <div id="load-more"></div>
   </div>
 
@@ -209,36 +410,8 @@
       observer.observe(sentinel);
 
       function loadMorePosts() {
-        // Load only 2 additional posts, then disconnect
-        for (let i = 0; i < 2; i++) {
-          const newLink = document.createElement('a');
-          newLink.href = "#";            // or point to another post X.detail.html
-          newLink.className = "post-link";
-          newLink.innerHTML = `
-            <div class="post-card">
-              <div class="post-header">
-                <img src="headshot.jpg" class="post-avatar" alt="Avatar" />
-                <div class="post-userinfo">
-                  <span class="post-username">more_posts</span>
-                  <span class="post-timestamp">just now</span>
-                </div>
-              </div>
-              <div class="post-text">
-                This is a dynamically loaded post #${Math.floor(Math.random() * 1000)}
-              </div>
-              <div class="post-actions">
-                <button class="icon-btn">❤️</button>
-                <button class="icon-btn">💬</button>
-                <button class="icon-btn">🔗</button>
-              </div>
-              <div class="post-caption">
-                <p><strong>more_posts</strong> Auto-generated content</p>
-              </div>
-            </div>
-          `;
-          feedContainer.insertBefore(newLink, sentinel);
-        }
-        observer.disconnect(); // stop loading after two extras
+        // No additional posts to load for now
+        observer.disconnect();
       }
     });
   </script>

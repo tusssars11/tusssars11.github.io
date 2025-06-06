@@ -11,7 +11,7 @@
     rel="stylesheet"
   />
 
-  <!-- Your CSS file -->
+  <!-- Link to your shared styles.css -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -37,7 +37,9 @@
        PROFILE PAGE CONTENT
        ========================= -->
   <section class="content-container fade-page">
-    <!-- Profile Header: Photo + Buttons -->
+    <!-- =========================
+         PROFILE HEADER (PHOTO + BUTTONS)
+         ========================= -->
     <div class="profile-header">
       <div class="about-photo">
         <img src="headshot.jpg" alt="Photo of Tushar" />
@@ -52,8 +54,7 @@
         >
           Open Resume
         </a>
-
-        <!-- “LinkedIn” button with embedded icon -->
+        <!-- “View LinkedIn” button without icon -->
         <a
           href="https://www.linkedin.com/in/tushar-koushik-015251282/"
           target="_blank"
@@ -65,7 +66,9 @@
       </div>
     </div>
 
-    <!-- Profile Stats -->
+    <!-- =========================
+         PROFILE STATS
+         ========================= -->
     <div class="profile-stats">
       <div class="stat">
         <span class="stat-number">6</span>
@@ -85,32 +88,123 @@
       </div>
     </div>
 
-    <!-- About Me Section -->
-    <h2 class="section-heading">About Me</h2>
-    <div class="about-container">
-      <div class="about-text">
-        <p>
-          I’m a rising Junior majoring in Computer Science & Data Science at Wheaton College.
-          I’m passionate about machine learning, data visualization, and open-source contributions.
-          When I’m not coding, you’ll find me on the soccer field or exploring new hiking trails.
-        </p>
-        <p><strong>My interests include:</strong></p>
-        <ul>
-          <li>Machine Learning & Data Science</li>
-          <li>Back-end Web Development (Flask, Django)</li>
-          <li>Cloud Technologies & DevOps</li>
-          <li>Open-Source Collaboration</li>
-          <li>Soccer & Outdoor Sports</li>
-        </ul>
+    <!-- =========================
+         ABOUT ME SECTION
+         ========================= -->
+    <div class="content-box">
+      <h2 class="section-heading">About Me</h2>
+      <div class="about-container">
+        <div class="about-text">
+          <p>
+            I’m a rising Junior majoring in Computer Science &amp; Data Science at Wheaton College.
+            I’m passionate about machine learning, data visualization, and open-source contributions.
+            When I’m not coding, you’ll find me on the soccer field or exploring new hiking trails.
+          </p>
+          <p><strong>My interests include:</strong></p>
+          <ul>
+            <li>Machine Learning &amp; Data Science</li>
+            <li>Back-end Web Development (Flask, Django)</li>
+            <li>Cloud Technologies &amp; DevOps</li>
+            <li>Open-Source Collaboration</li>
+            <li>Soccer &amp; Outdoor Sports</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <!-- Footer -->
+    <!-- =========================
+         CERTIFICATES GRID (3×3)
+         ========================= -->
+    <h2 class="section-heading">Certificates</h2>
+    <div class="certificate-grid">
+      <!-- Certificate 1 -->
+      <div class="certificate-item">
+        <img src="certificate1.jpg" alt="Certificate 1" />
+      </div>
+      <!-- Certificate 2 -->
+      <div class="certificate-item">
+        <img src="certificate2.jpg" alt="Certificate 2" />
+      </div>
+      <!-- Certificate 3 -->
+      <div class="certificate-item">
+        <img src="certificate3.jpg" alt="Certificate 3" />
+      </div>
+      <!-- Certificate 4 -->
+      <div class="certificate-item">
+        <img src="certificate4.jpg" alt="Certificate 4" />
+      </div>
+      <!-- Certificate 5 -->
+      <div class="certificate-item">
+        <img src="certificate5.jpg" alt="Certificate 5" />
+      </div>
+      <!-- Certificate 6 -->
+      <div class="certificate-item">
+        <img src="certificate6.jpg" alt="Certificate 6" />
+      </div>
+      <!-- Certificate 7 -->
+      <div class="certificate-item">
+        <img src="certificate7.jpg" alt="Certificate 7" />
+      </div>
+      <!-- Certificate 8 -->
+      <div class="certificate-item">
+        <img src="certificate8.jpg" alt="Certificate 8" />
+      </div>
+      <!-- Certificate 9 -->
+      <div class="certificate-item">
+        <img src="certificate9.jpg" alt="Certificate 9" />
+      </div>
+    </div>
+
+    <!-- =========================
+         LIGHTBOX / MODAL FOR ZOOMING CERTIFICATE
+         ========================= -->
+    <div class="cert-modal" id="cert-modal">
+      <span class="cert-close" id="cert-close">&times;</span>
+      <img class="cert-modal-content" id="cert-modal-img" src="" alt="" />
+      <div id="cert-modal-caption"></div>
+    </div>
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
     <footer>
       <hr />
       <p>© 2025 Tushar Koushik. All rights reserved.</p>
       <p><a href="index.html" class="back-link">← Back to Feed</a></p>
     </footer>
   </section>
+
+  <!-- =========================
+       SIMPLE LIGHTBOX SCRIPT
+       ========================= -->
+  <script>
+    // Grab all certificate thumbnails
+    const certificateImages = document.querySelectorAll('.certificate-item img');
+    const modal = document.getElementById('cert-modal');
+    const modalImg = document.getElementById('cert-modal-img');
+    const captionText = document.getElementById('cert-modal-caption');
+    const closeBtn = document.getElementById('cert-close');
+
+    // When any thumbnail is clicked, open modal and show its image + alt text
+    certificateImages.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+        captionText.textContent = img.alt;
+      });
+    });
+
+    // Close button hides the modal
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // Clicking outside the image (on the overlay) also closes
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
