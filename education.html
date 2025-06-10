@@ -5,14 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Education • Tushar Koushik</title>
 
-  <!-- Monospaced font (Fira Code) -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Same CSS file -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .edu-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .edu-logo {
+      height: 50px;
+      object-fit: contain;
+      margin-top: 4px;
+    }
+
+    .edu-entry {
+      margin-bottom: 32px;
+    }
+  </style>
 </head>
 <body>
   <!-- =========================
@@ -39,28 +52,46 @@
   <section class="content-container fade-page">
     <h2 class="section-heading">Education</h2>
 
-    <!-- Wheaton College (boxed) -->
-    <div class="content-box">
-      <h3>Wheaton College, Norton, MA</h3>
-      <p><strong>B.A. in Computer Science &amp; Data Science</strong> (Class of 2026)</p>
-      <ul>
-        <li>GPA: 3.85 / 4.00</li>
-        <li>Relevant Coursework:
+    <!-- Wheaton College -->
+    <div class="content-box edu-entry">
+      <div class="edu-flex">
+        <img src="wheaton-logo.png" alt="Wheaton College Logo" class="edu-logo" />
+        <div>
+          <h3>Wheaton College, Norton, MA</h3>
+          <p><strong>BS:</strong> Computer Science and BA Data Science | <em>May 2026</em></p>
           <ul>
-            <li>Algorithms &amp; Data Structures</li>
-            <li>Machine Learning &amp; AI</li>
-            <li>Data Visualization &amp; Python</li>
-            <li>Database Management Systems</li>
-            <li>Cloud Computing Fundamentals</li>
+            <li><strong>Relevant Coursework:</strong>
+              <ul>
+                <li>Database Management Systems, Data Science, Statistical Analysis</li>
+                <li>Mobile Computing, Methods of Data Analysis, Linear Algebra</li>
+                <li>Operations Research, Machine Learning, Applied AI, Algorithms</li>
+              </ul>
+            </li>
           </ul>
-        </li>
-        <li>Dean’s List: Fall 2021, Spring 2022, Fall 2022</li>
-        <li>Senior Capstone Project: Developed a real-time data analytics dashboard in Django</li>
-      </ul>
+        </div>
+      </div>
     </div>
 
-    <!-- Add additional education entries here, each wrapped in .content-box -->
+    <!-- MIT Break Through Tech AI -->
+    <div class="content-box edu-entry">
+      <div class="edu-flex">
+        <img src="mit-logo.png" alt="MIT Logo" class="edu-logo" />
+        <div>
+          <h3>Massachusetts Institute of Technology – Break Through Tech AI Fellow</h3>
+          <p>
+            <strong>Program:</strong> Machine Learning &amp; AI Studio | <em>May 2024 – May 2025</em><br />
+            <em>Boston, MA • Hybrid</em>
+          </p>
+          <ul>
+            <li>Selected from over 3,000 applicants for a competitive 12-month AI/ML fellowship</li>
+            <li>Collaborating with companies on an industry-driven AI/ML project</li>
+            <li>Applying agile methodologies and software engineering best practices</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
+    <!-- Footer -->
     <footer>
       <hr />
       <p>© 2025 Tushar Koushik. All rights reserved.</p>
