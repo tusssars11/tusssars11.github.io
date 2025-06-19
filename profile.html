@@ -190,6 +190,7 @@
       img.addEventListener('click', () => {
         modal.style.display = 'flex';
         modalImg.src = img.src;
+        modalImg.alt = img.alt;
         captionText.textContent = img.alt;
       });
     });
