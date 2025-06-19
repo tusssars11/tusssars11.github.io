@@ -29,6 +29,7 @@
     <nav>
       <div class="nav-container">
         <div class="logo"><a href="index.html">Tushar Koushik</a></div>
+        <button class="nav-toggle" aria-label="Menu">☰</button>
         <ul class="nav-links">
           <li><a href="index.html" class="active">Feed</a></li>
           <li><a href="profile.html">Profile</a></li>
@@ -405,12 +406,13 @@
     </a>
 
     <!-- (Optional) sentinel for infinite scroll -->
-    <div id="load-more"></div>
+  <div id="load-more"></div>
   </div>
 
   <!-- =========================
        INFINITE SCROLL JAVASCRIPT (optional)
        ========================= -->
+  <script src="nav.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const feedContainer = document.querySelector('.feed-container');
